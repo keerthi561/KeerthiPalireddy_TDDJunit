@@ -2,6 +2,7 @@ package com.epam.RemoveA;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class RemoveATestCase {
@@ -13,33 +14,38 @@ class RemoveATestCase {
 	 *  4. BBAA -> BBAA
 	 *  5. AABAA -> BAA
 	 */
+	RemoveA rmA;
+	@BeforeEach
+	void setup() {
+		rmA = new RemoveA();
+	}
 	@Test
 	void testFirstChar() {
-		RemoveA rmA = new RemoveA();
+		
 		String actual = rmA.remove("ABCD");
 		assertEquals("BCD", actual);
 	}
 	@Test
 	void testFirstTwoChar() {
-		RemoveA rmA = new RemoveA();
+		
 		String actual = rmA.remove("AACD");
 		assertEquals("CD", actual);
 	}
 	@Test
 	void testSecondChar() {
-		RemoveA rmA = new RemoveA();
+		
 		String actual = rmA.remove("BACD");
 		assertEquals("BCD", actual);
 	}
 	@Test
 	void testFirstTwoCharNotA() {
-		RemoveA rmA = new RemoveA();
+		
 		String actual = rmA.remove("BBAA");
 		assertEquals("BBAA", actual);
 	}
 	@Test
 	void testFirstTwoCharA() {
-		RemoveA rmA = new RemoveA();
+		
 		String actual = rmA.remove("AABBAA");
 		assertEquals("BBAA", actual);
 	}
