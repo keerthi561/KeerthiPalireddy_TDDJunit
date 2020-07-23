@@ -25,5 +25,23 @@ class RemoveATestCase {
 		String actual = rmA.remove("AACD");
 		assertEquals("CD", actual);
 	}
+	@Test
+	void testSecondChar() {
+		RemoveA rmA = new RemoveA();
+		String actual = rmA.remove("BACD");
+		assertEquals("BCD", actual);
+	}
+	@Test
+	void testFirstTwoCharNotA() {
+		RemoveA rmA = new RemoveA();
+		String actual = rmA.remove("BBAA");
+		assertEquals("BBAA", actual);
+	}
+	@Test
+	void testFirstTwoCharA() {
+		RemoveA rmA = new RemoveA();
+		String actual = rmA.remove("AABBAA");
+		assertEquals("BBAA", actual);
+	}
 
 }
