@@ -10,9 +10,9 @@ class RemoveATestCase {
 	 *  Remove A from first 2 letters
 	 *  1. ABCD -> BCD - success
 	 *  2. AACD -> CD - success
-	 *  3. BACD -> BCD
-	 *  4. BBAA -> BBAA
-	 *  5. AABAA -> BAA
+	 *  3. BACD -> BCD - success
+	 *  4. BBAA -> BBAA - success
+	 *  5. AABAA -> BAA - success
 	 */
 	RemoveA rmA;
 	@BeforeEach
@@ -21,33 +21,23 @@ class RemoveATestCase {
 	}
 	@Test
 	void testFirstChar() {
-		
-		String actual = rmA.remove("ABCD");
-		assertEquals("BCD", actual);
+		assertEquals("BCD", rmA.remove("ABCD"));
 	}
 	@Test
 	void testFirstTwoChar() {
-		
-		String actual = rmA.remove("AACD");
-		assertEquals("CD", actual);
+		assertEquals("CD", rmA.remove("AACD"));
 	}
 	@Test
 	void testSecondChar() {
-		
-		String actual = rmA.remove("BACD");
-		assertEquals("BCD", actual);
+		assertEquals("BCD", rmA.remove("BACD"));
 	}
 	@Test
 	void testFirstTwoCharNotA() {
-		
-		String actual = rmA.remove("BBAA");
-		assertEquals("BBAA", actual);
+		assertEquals("BBAA", rmA.remove("BBAA"));
 	}
 	@Test
 	void testFirstTwoCharA() {
-		
-		String actual = rmA.remove("AABBAA");
-		assertEquals("BBAA", actual);
+		assertEquals("BBAA", rmA.remove("AABBAA"));
 	}
 
 }
